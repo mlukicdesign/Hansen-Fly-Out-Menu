@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ease: "power4.out"
         }, "<");
 
-        gsap.to(sidebar, {
+        gsap.to(container, {
             filter: 'blur(15px)',
             duration: 1,
             immediateRender: false,
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ease: "power4.out"
         }, "<");
 
-        gsap.to(sidebar, {
+        gsap.to(container, {
             filter: 'blur(0px)',
             duration: 1,
             immediateRender: false,
@@ -48,15 +48,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     overlayToggle.addEventListener('click', () => {
-        sidebar.computedStyleMap.pointerEvent = "all";
+        sidebar.style.pointerEvents = "all";
         animateCardsIn();
     })
 
     cards.forEach((card => {
         card.addEventListener('click', () => {
             sidebar.style.pointerEvents = "none";
-            animateCardsOut();
+            animateCardsOut();        
         })
     }))
 
-})
+});
